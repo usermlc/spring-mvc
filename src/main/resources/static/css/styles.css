@@ -1,0 +1,140 @@
+/* Base styling for the page */
+body {
+  font-family: 'Verdana', Arial, sans-serif; /* Using a clean, readable font */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7f9; /* Light background for a soft look */
+  color: #444; /* Neutral text color for readability */
+  line-height: 1.7; /* Comfortable line height for content */
+}
+
+/* Styling for headings */
+h1, h2, h3 {
+  color: #2c3e50; /* Bold color to make headings stand out */
+  text-align: left; /* Aligns text consistently */
+  margin: 1.2rem 0; /* Provides spacing between headings */
+  display: block;
+}
+
+/* Main content container */
+.wrapper {
+  max-width: 62rem; /* Defines the container's maximum width */
+  margin: 2.5rem auto; /* Centers the container with appropriate spacing */
+  padding: 2.2rem; /* Adds internal padding */
+  background: #ffffff;
+  border-radius: 10px; /* Rounded corners for a softer design */
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08); /* Light shadow for depth */
+}
+
+/* Header area with primary colors */
+header {
+  background: #3498db; /* Bright, vibrant background */
+  color: #fff;
+  padding: 2.2rem 0; /* More padding for breathing room */
+  text-align: center; /* Centralizes the header content */
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow under the header */
+}
+
+nav {
+  margin: 1.2rem 0; /* Adds space around the navigation */
+}
+
+nav a {
+  color: #fff; /* White text for visibility */
+  text-decoration: none;
+  padding: 0.9rem 1.6rem; /* Comfortable padding inside the links */
+  border-radius: 6px; /* Rounded corners for the links */
+  transition: background 0.3s ease; /* Smooth background transition on hover */
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  background: #3498db; /* Bold background color */
+  color: #fff; /* White text for contrast */
+  padding: 0.85rem 1.6rem; /* Well-padded button */
+  border: none;
+  border-radius: 6px; /* Slightly rounded button corners */
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  margin: 0.6rem 0;
+}
+
+.btn:hover {
+  background: #1abc9c; /* Soft hover effect for buttons */
+}
+
+/* Custom styling for the delete button */
+.btn-danger {
+  background: #e74c3c; /* Red background for delete actions */
+}
+
+.btn-danger:hover {
+  background: #c0392b; /* Darker red for hover state */
+}
+
+/* Table styling for structured data */
+table {
+  width: 100%; /* Full width table */
+  margin-top: 1.2rem; /* Space above the table */
+  border-collapse: separate; /* Keeps the table layout distinct */
+  border-spacing: 0 0.8rem; /* Adds space between rows */
+}
+
+th, td {
+  padding: 1.2rem; /* Adds padding to the table cells */
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Subtle bottom border for table rows */
+}
+
+th {
+  background: #f5f5f5; /* Light background for table headers */
+}
+
+/* Form container for inputs */
+.form-wrapper {
+  background: #ffffff; /* Neutral background for forms */
+  padding: 2.5rem; /* Generous padding around form fields */
+  margin-bottom: 1.8rem; /* Space below the form */
+  border-radius: 10px; /* Soft corners for the form */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Slight shadow for form depth */
+}
+
+.form-group {
+  margin-bottom: 1.7rem; /* Adds space between form fields */
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem; /* Space below the label */
+  font-weight: bold; /* Makes the label more visible */
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Full-width form inputs */
+  padding: 0.9rem; /* Well-padded inputs */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Rounded corners for inputs */
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 10.5rem; /* Defined height for the textarea */
+}
+
+/* Error message styling */
+.error-text {
+  color: #e74c3c; /* Red color for error messages */
+  font-size: 0.95rem; /* Slightly larger font for errors */
+}
+
+/* Responsive styles for smaller devices */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 1.5rem; /* Adjusted padding for mobile screens */
+  }
+}

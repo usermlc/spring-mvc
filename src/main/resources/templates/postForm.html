@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Post</title> <!-- Title for the create or edit post page -->
+  <link rel="stylesheet" th:href="@{/css/main-style.css}"> <!-- Linking to the stylesheet -->
+</head>
+<body>
+<div class="wrapper"> <!-- Main content container -->
+
+  <!-- Conditionally displaying the heading based on whether the post exists -->
+  <h1 th:if="${post.id} == null">Create New Post</h1>
+  <h1 th:if="${post.id} != null">Modify Post</h1>
+
+  <!-- Form for adding a new post -->
+  <form th:action="@{/posts/add}" th:if="${post.id} == null" method="post" th:object="${post}" class="form-wrapper">
+
+    <!-- Input field for the post title -->
+    <div class="input-group">
+      <label for="title">Post Title:</label> <!-- Label for the title input -->
+      <input type="text" id="title" th:field="*{title}" required />
+      <!-- Error message for title validation -->
+      <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-text">Title Error</div>
+    </div>
+
+    <!-- Textarea field for the post content -->
+    <div class="input-group">
+      <label for="content">Content:</label> <!-- Label for the content textarea -->
+      <textarea id="content" th:field="*{content}" required></textarea>
+      <!-- Error message for content validation -->
+      <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="error-text">Content Error</div>
+    </div>
+
+    <!-- Submit button for creating a new post -->
+    <button type="submit" class="btn">Add Post</button> <!-- Button for submission -->
+  </form>
+
+  <!-- Form for editing an existing post -->
+  <form th:action="@{/posts/edit/{id}(id=${post.id})}" th:if="${post.id} != null" method="post" th:object="${post}" class="form-wrapper">
+
+    <!-- Input field for the post title -->
+    <div class="input-group">
+      <label for="title">Post Title:</label> <!-- Label for the title input -->
+      <input type="text" id="title" th:field="*{title}" required />
+      <!-- Error message for title validation -->
+      <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-text">Title Error</div>
+    </div>
+
+    <!-- Textarea field for the post content -->
+    <div class="input-group">
+      <label for="content">Content:</label> <!-- Label for the content textarea -->
+      <textarea id="content" th:field="*{content}" required></textarea>
+      <!-- Error message for content validation -->
+      <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="error-text">Content Error</div>
+    </div>
+
+    <!-- Submit button for updating the post -->
+    <button type="submit" class="btn">Update Post</button> <!-- Button for submission -->
+  </form>
+
+  <!-- Cancel link to go back to the post list -->
+  <a class="btn" href="/posts">Cancel</a> <!-- Button to cancel and go back to the list -->
+</div>
+</body>
+</html>

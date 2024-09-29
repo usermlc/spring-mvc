@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Overview</title> <!-- Page title for the list of posts -->
+  <link rel="stylesheet" th:href="@{/css/main-style.css}"> <!-- Linking to custom CSS -->
+</head>
+<body>
+<div class="wrapper"> <!-- Main content wrapper for the page -->
+
+  <!-- Heading for the post list -->
+  <h1>All Posts</h1>
+
+  <!-- Table displaying posts and available actions -->
+  <table>
+    <tr>
+      <th>Post Title</th> <!-- Column for post titles -->
+      <th>Actions</th> <!-- Column for available actions (view, edit, delete) -->
+    </tr>
+
+    <!-- Iterating over the posts and displaying each one in a table row -->
+    <tr th:each="post : ${posts}">
+      <td th:text="${post.title}"></td> <!-- Displaying the title of each post -->
+      <td>
+        <!-- Link to view the full details of the post -->
+        <a class="btn" th:href="@{/posts/{id}(id=${post.id})}">View</a>
+
+        <!-- Link to edit the selected post -->
+        <a class="btn" th:href="@{/posts/edit/{id}(id=${post.id})}">Edit</a>
+
+        <!-- Form for deleting the post, kept inline with other actions -->
+        <form th:action="@{/posts/delete/{id}(id=${post.id})}" method="post" style="display:inline;">
+          <button type="submit" class="btn btn-danger">Delete</button> <!-- Delete button -->
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Button to add a new post -->
+  <a class="btn" href="/posts/add">Create New Post</a> <!-- Link to the post creation page -->
+
+</div>
+</body>
+</html>

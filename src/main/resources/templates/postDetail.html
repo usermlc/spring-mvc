@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Details</title> <!-- Title for the post detail page -->
+  <link rel="stylesheet" th:href="@{/css/main-style.css}"> <!-- Linking to the stylesheet -->
+</head>
+<body>
+<div class="wrapper"> <!-- Wrapper for main post content -->
+
+  <!-- Displaying the post title dynamically -->
+  <h1 th:text="${post.title}"></h1> <!-- Rendered title of the post -->
+
+  <!-- Displaying the content of the post dynamically -->
+  <p th:text="${post.content}"></p> <!-- Rendered content of the post -->
+
+  <!-- Link to return to the post listing page -->
+  <a class="btn" href="/posts">Return to Post List</a> <!-- Button to go back to the post list -->
+
+</div>
+</body>
+</html>
