@@ -57,4 +57,3 @@ A simple blog application built using Spring MVC, Thymeleaf, and a basic in-memo
 ## License
 
 This project is licensed under the MIT License.
-```
